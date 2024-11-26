@@ -2,10 +2,11 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function AddeMployee(props) {
+function AddEmployee(props) {
       const handleClose = () => props.setShow(false);
       const handleShow = () => props.setShow(true);
-
+      const [name, setName] = useState();
+      const [role, setRole] = useState();
 
       return (
             <>
@@ -16,7 +17,9 @@ function AddeMployee(props) {
                         <Modal.Body>
                               <form className="w-full max-w-sm" onSubmit={(e) => {
                                     e.preventDefault();
-                                    props.addEmployee();
+                                    setName('');
+                                    setRole('');
+                                    props.addEmployee(name, role);
                                     handleClose();
                               }
                               }>
@@ -58,4 +61,4 @@ function AddeMployee(props) {
       );
 }
 
-export default AddeMployee;
+export default AddEmployee;
