@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dictionary from "./components/Dictionary";
 import Definitions from "./components/Definitions";
 import Registration from "./components/Registration";
+import Province from "./components/Province";
 //import Employee from './components/Employee'
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/Dictionary" element={<Dictionary/>}></Route>
             <Route path="/Registration" element={<Registration/>}></Route>
             <Route path="/Difinitions/:searchTerm" element={<Definitions/>}></Route>
+            <Route path="/Province/" element={<Province/>}></Route>
       </Routes>
       </Main>
       </BrowserRouter>
@@ -36,6 +38,6 @@ function App() {
 //            <Employees></Employees>
            
 //       )
-// }
+ }
 
-// export default App;
+export default App;

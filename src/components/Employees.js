@@ -1,7 +1,8 @@
 
 import { useState } from 'react';
 import Employee from './Employee';
-import AddeMployee from './AddEmployee';
+// import AddeMployee from './AddEmployee';
+import AddeMployee from './AddeMployee'
 export default function Employees() {
   const [name, setName] = useState();
   const [show, setShow] = useState(false);
