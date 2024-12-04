@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import Employee from './Employee';
-import AddeMployee from './AddeMployee';
+import AddeMployee from './AddEmployee';
 export default function Employees() {
   const [name, setName] = useState();
   const [show, setShow] = useState(false);
@@ -59,12 +59,17 @@ export default function Employees() {
 
 
   }
-  function addEmployee() {
 
-    const newEmployee =[...employees,{name: name, role: role , id:341 , img:"afaf" }]
-    console.log("newEmployee", newEmployee);
+  function addEmployee(newName , newRole) {
 
-    setEmployees(newEmployee);
+    const newEmployee ={
+      name: name, 
+      role: role
+    //img:"../public/img"+ newimg +".png"
+    }
+   
+
+    setEmployees([...employees,newEmployee]);
 
 
   }
