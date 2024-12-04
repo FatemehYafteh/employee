@@ -53,7 +53,6 @@ export default function Employees() {
 
   }
   function removeEmployee(id) {
-    console.log("fasfas", id);
 
     const newEmployee = employees.filter((item) => (item.id !== id))
     setEmployees(newEmployee);
