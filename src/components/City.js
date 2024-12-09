@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from "react"
-export default function City({ pId }) {
+export default function City({ ID }) {
       const [citylList, setCityList] = useState([
             {
                   id: 530,
@@ -67,22 +67,22 @@ export default function City({ pId }) {
             }
       ])
       const [cityListTemp, setCityListTemp] = useState(citylList);
-      useEffect(() => filterCityList(pId), [pId]);
-      const filterCityList = (pId) => {
-            //console.log("Temp",cityListTemp);
-            //console.log("pId",pId);
-            const newCityList = citylList.filter((item) => item.province.id == pId);
-           // console.log("newCityList",newCityList);
+      useEffect(() => filterCityList(ID), [ID]);
+      //console.log("ID" , ID);
+      const filterCityList = (ID) => {
+            const newCityList = citylList.filter((item) => item.province.id == ID);
             setCityListTemp(newCityList);
-          
-           // console.log("pId",pId);
+          //  console.log("Temp", cityListTemp);
       }
+      console.log("Tempppppppppppp", cityListTemp);
+      
       return (
             <div>
                   <select>
-                        {cityListTemp.length > 0 ?
-                              cityListTemp.map((item) => { return <option key={item.id} onClick={(e) => (console.log(e.target.value))} value={item.id}>{item.name + " استان " + item.province.name}</option> }) :
-                              <option>هیچ اطلاعاتی یافت نشد</option>}
+                        {cityListTemp.length> 0 ?
+                              cityListTemp.map((item) => { return <option key={item.id} value={item.id}>{item.name +" استان "+ item.province.name}</option> }):
+                              <option>هیچ اطلاعاتی یافت نشد</option>
+                        }
                   </select>
             </div>
       )

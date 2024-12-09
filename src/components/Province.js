@@ -1,7 +1,5 @@
-// import axios from 'axios'
-// import React from 'react'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import City from "./City";
 
 export default function Province() {
@@ -62,23 +60,30 @@ export default function Province() {
       name: "ایلام",
       cities: null
     }]);
-  
-  const [pId ,setPId]=useState();
- 
-  console.log("pid=", pId);
-  const setProvinceId=(pId)=>{
-  //  setPId(pId);
-   
-}
+
+
+  const [ID, setPId] = useState();
+  const handlechange = (e) => {
+    // console.log("id:", e.target.value)
+    setPId(e.target.value);
+  }
+  console.log("setpid : ", ID)
+  // const setProvinceId = (pId) => {
+    // setPId(pId);
+  // }
+  // useEffect(()=>console.log("ID :", ID),[ID]);
   return (
 
-    <div className="flex justify-center space-between">
-      <select>
-        {provinceList?.map((item) => { return <option key={item.id} value={item.id} onClick={(e) => setProvinceId(7)}  >{item.name}</option> })}
+    <div className="flex justify-center m-6">
+      <select onChange={handlechange} >
+        {provinceList?.map((item) => { return <option key={item.id} value={item.id} >{item.name}</option> })}
       </select>
-      <br></br>
-      <br></br>
-      <City key={pId} pId={pId}/>
+      
+      <City key={ID}
+        ID={ID}
+      />
+      {/* <button className="bg bg-red-300" onClick={(e)=>console.log("ID :", (e.target.value) )}>click meeeeeeeeee </button> */}
     </div>
   )
 }
+// onClick={(e)=>setProvinceId(e.target.value)} 
